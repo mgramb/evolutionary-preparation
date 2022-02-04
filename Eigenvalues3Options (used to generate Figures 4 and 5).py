@@ -218,6 +218,13 @@ def highestev6(x, p):
     return d[0]
 
 
+def lowestev6(x, p):
+    eigvalues, eigvectors = sc.linalg.eig(matrix6(x, p))
+    realev = eigvalues.real
+    d = sorted(realev, reverse=True)
+    return d[5]
+
+
 def evforp(p):
     tdelta = np.arange(0.01, 1, 0.01)
     evlist = []
@@ -227,9 +234,20 @@ def evforp(p):
     return value
 
 
+def evlowforp(p):
+    tdelta = np.arange(0.01, 1, 0.01)
+    evlist = []
+    for k in range(len(tdelta)):
+        evlist.append(lowestev6(tdelta[k], p))
+    value = max(evlist)
+    return value
+
+
 evplotlist = []
+evlowplotlist = []
 for i in range(len(t)):
     evplotlist.append(evforp(t[i]))
+    evlowplotlist.append(evlowforp(t[i]))
 
 plt.figure(dpi=100)
 plt.plot(t, evplotlist, '--')
@@ -237,4 +255,12 @@ plt.xlabel("$p_2$")
 plt.ylabel("Real Part of the Eigenvalue")
 plt.show()
 
+
+plt.figure(dpi=100)
+plt.plot(t, evlowplotlist, '--')
+# This plot was not included in the paper. For a fixed value of p_2, it shows the maximal value of the lowest real part
+# of all eigenvalues across all \Delta in [0,1]
+plt.xlabel("$p_2$")
+plt.ylabel("Real Part of the Eigenvalue")
+plt.show()
 
