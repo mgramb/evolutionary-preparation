@@ -35,9 +35,15 @@ for i in range(len(t)):
     a6.append(evsorted(t[i])[5])
 
 plt.figure(dpi=100)
-plt.plot(t, a1, '--', t, a2, '--', t, a3, '--', t, a4, '--', t, a5, '--', t, a6, '--')
-plt.xlabel("$\Delta$")
+plt.plot(t, a1, color='k', linestyle='dashed')
+plt.plot(t, a2, color='0.36', linestyle='dashed')
+plt.plot(t, a3, color='0.12', linestyle='dashed')
+plt.plot(t, a4, color='0.48', linestyle='dashed')
+plt.plot(t, a5, color='0.24', linestyle='dashed')
+plt.plot(t, a6, color='0.60', linestyle='dashed')
+plt.xlabel("$\kappa$")
 plt.ylabel("Real Parts of the Eigenvalues")
+plt.savefig('mixing3gray.pdf')
 plt.show()
 
 
@@ -75,9 +81,15 @@ for i in range(len(t)):
 
 
 plt.figure(dpi=100)
-plt.plot(t, b1, '--', t, b2, '--', t, b3, '--', t, b4, '--', t, b5, '--', t, b6, '--')
-plt.xlabel("$\Delta$")
+plt.plot(t, b1, color='k', linestyle='dashed')
+plt.plot(t, b2, color='0.36', linestyle='dashed')
+plt.plot(t, b3, color='0.12', linestyle='dashed')
+plt.plot(t, b4, color='0.48', linestyle='dashed')
+plt.plot(t, b5, color='0.24', linestyle='dashed')
+plt.plot(t, b6, color='0.60', linestyle='dashed')
+plt.xlabel("$\kappa$")
 plt.ylabel("Real Parts of the Eigenvalues")
+plt.savefig('mixing2consgray.pdf')
 plt.show()
 
 
@@ -115,9 +127,15 @@ for i in range(len(t)):
 
 
 plt.figure(dpi=100)
-plt.plot(t, c1, '--', t, c2, '--', t, c3, '--', t, c4, '--', t, c5, '--', t, c6, '--')
-plt.xlabel("$\Delta$")
+plt.plot(t, c1, color='k', linestyle='dashed')
+plt.plot(t, c2, color='0.36', linestyle='dashed')
+plt.plot(t, c3, color='0.12', linestyle='dashed')
+plt.plot(t, c4, color='0.48', linestyle='dashed')
+plt.plot(t, c5, color='0.24', linestyle='dashed')
+plt.plot(t, c6, color='0.60', linestyle='dashed')
+plt.xlabel("$\kappa$")
 plt.ylabel("Real Parts of the Eigenvalues")
+plt.savefig('specializationgray.pdf')
 plt.show()
 
 
@@ -156,7 +174,7 @@ for i in range(len(t)):
 
 plt.figure(dpi=100)
 plt.plot(t, d1, '--', t, d2, '--', t, d3, '--', t, d4, '--', t, d5, '--', t, d6, '--')
-plt.xlabel("$\Delta$")
+plt.xlabel("$\kappa$")
 plt.ylabel("Real Parts of the Eigenvalues")
 plt.show()
 
@@ -195,9 +213,15 @@ for i in range(len(t)):
 
 
 plt.figure(dpi=100)
-plt.plot(t, e1, '--', t, e2, '--', t, e3, '--', t, e4, '--', t, e5, '--', t, e6, '--')
-plt.xlabel("$\Delta$")
+plt.plot(t, e1, color='k', linestyle='dashed')
+plt.plot(t, e2, color='0.36', linestyle='dashed')
+plt.plot(t, e3, color='0.12', linestyle='dashed')
+plt.plot(t, e4, color='0.48', linestyle='dashed')
+plt.plot(t, e5, color='0.24', linestyle='dashed')
+plt.plot(t, e6, color='0.60', linestyle='dashed')
+plt.xlabel("$\kappa$")
 plt.ylabel("Real Parts of the Eigenvalues")
+plt.savefig('mixing2inconsgray.pdf')
 plt.show()
 
 
@@ -250,17 +274,17 @@ for i in range(len(t)):
     evlowplotlist.append(evlowforp(t[i]))
 
 plt.figure(dpi=100)
-plt.plot(t, evplotlist, '--')
+plt.plot(t, evplotlist, 'k--')
 plt.xlabel("$p_2$")
 plt.ylabel("Real Part of the Eigenvalue")
+plt.savefig('specializationinconsgray.pdf')
 plt.show()
 
 
 plt.figure(dpi=100)
-plt.plot(t, evlowplotlist, '--')
+plt.plot(t, evlowplotlist, 'k--')
 # This plot was not included in the paper. For a fixed value of p_2, it shows the maximal value of the lowest real part
-# of all eigenvalues across all \Delta in [0,1]
+# of all eigenvalues across all \kappa in [0,1]
 plt.xlabel("$p_2$")
 plt.ylabel("Real Part of the Eigenvalue")
 plt.show()
-
